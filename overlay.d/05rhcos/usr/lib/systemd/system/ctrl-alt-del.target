@@ -1,0 +1,6 @@
+# Mask ctrl-alt-del.target to prevent keyboard-initiated reboot.
+# RHCOS nodes should not be rebooted via console keyboard.
+# CIS Benchmark: Ensure Ctrl-Alt-Del reboot is disabled
+[Unit]
+Description=Reboot (disabled for security)
+Documentation=man:systemd.special(7)
