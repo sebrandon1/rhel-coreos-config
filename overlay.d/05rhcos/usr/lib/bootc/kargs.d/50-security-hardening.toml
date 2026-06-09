@@ -1,0 +1,10 @@
+# Enable audit subsystem at boot with sufficient backlog buffer
+# for high-event-rate environments.
+# CIS Benchmark: Ensure auditing is enabled at boot
+kargs = ["audit=1", "audit_backlog_limit=8192"]
+
+# KSPP-recommended kernel hardening:
+# pti: Kernel Page Table Isolation (mitigates Meltdown)
+# page_poison: Poison freed pages (detects use-after-free)
+# vsyscall: Eliminate vsyscall page (removes ROP gadget target)
+kargs = ["pti=on", "page_poison=1", "vsyscall=none"]
